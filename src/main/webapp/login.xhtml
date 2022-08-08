@@ -6,13 +6,26 @@
 
 <h:head></h:head>
 <h:body>
-<h:form>
+
+	<h:form id="idFormLogin">
 
 
-	<h:selectBooleanCheckbox value="Clave">Clave</h:selectBooleanCheckbox>
-	<br/>
-	<h:outputLabel value="Bienvenido al Login">
-	</h:outputLabel>
-</h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Usuario"></h:outputLabel>
+			<h:inputText id="idtxtUsuario"></h:inputText>
+			
+			<h:outputLabel value="Clave"></h:outputLabel>
+			<h:inputSecret id="idtxtClave"></h:inputSecret>
+			
+			
+			<h:commandButton id="idBtnEntrar" value="Entrar"></h:commandButton>
+		</h:panelGrid>
+
+		
+		<br />
+		<h:outputLabel value="Bienvenido al Login">
+		</h:outputLabel>
+	</h:form>
+
 </h:body>
 </html>

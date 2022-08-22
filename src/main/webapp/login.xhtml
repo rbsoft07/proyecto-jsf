@@ -9,22 +9,22 @@
 
 	<h:form id="idFormLogin">
 
-
+		<h:outputLabel value="Bienvenido al Login">
+		</h:outputLabel>
 		<h:panelGrid columns="2">
-			<h:outputLabel value="Usuario"></h:outputLabel>
-			<h:inputText id="idtxtUsuario"></h:inputText>
+			<h:outputLabel value="Usuario : *"></h:outputLabel>
+			<h:inputText value="#{login.usuario}" required="true" requiredMessage="El usuario es requerido"></h:inputText>
 			
-			<h:outputLabel value="Clave"></h:outputLabel>
-			<h:inputSecret id="idtxtClave"></h:inputSecret>
+			<h:outputLabel value="Clave : *"></h:outputLabel>
+			<h:inputSecret value="#{login.clave}" required="true" requiredMessage="La clave es requerida"></h:inputSecret>
 			
 			
-			<h:commandButton id="idBtnEntrar" value="Entrar"></h:commandButton>
+			<h:commandButton id="idBtnEntrar" value="Entrar" action="#{login.ingresar}"></h:commandButton>
 		</h:panelGrid>
 
 		
 		<br />
-		<h:outputLabel value="Bienvenido al Login">
-		</h:outputLabel>
+
 	</h:form>
 
 </h:body>

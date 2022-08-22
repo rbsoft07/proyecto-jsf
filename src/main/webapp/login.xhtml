@@ -13,10 +13,10 @@
 		</h:outputLabel>
 		<h:panelGrid columns="2">
 			<h:outputLabel value="Usuario : *"></h:outputLabel>
-			<h:inputText value="#{login.usuario}" required="true" requiredMessage="El usuario es requerido"></h:inputText>
+			<h:inputText id="txtIdUsuario" value="#{login.usuario}" required="true" requiredMessage="El usuario es requerido"></h:inputText>
 			
 			<h:outputLabel value="Clave : *"></h:outputLabel>
-			<h:inputSecret value="#{login.clave}" required="true" requiredMessage="La clave es requerida"></h:inputSecret>
+			<h:inputSecret id="txtIdClave" value="#{login.clave}" required="true" requiredMessage="La clave es requerida"></h:inputSecret>
 			
 			
 			<h:commandButton id="idBtnEntrar" value="Entrar" action="#{login.ingresar}"></h:commandButton>

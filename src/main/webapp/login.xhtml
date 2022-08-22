@@ -4,7 +4,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head></h:head>
+<h:head>
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+</h:head>
 <h:body>
 
 	<h:form id="idFormLogin">
@@ -12,10 +14,10 @@
 		<h:outputLabel value="Bienvenido al Login">
 		</h:outputLabel>
 		<h:panelGrid columns="2">
-			<h:outputLabel value="Usuario : *"></h:outputLabel>
+			<h:outputLabel value="Usuario : *"  styleClass="colorText"></h:outputLabel>
 			<h:inputText id="txtIdUsuario" value="#{login.usuario}" required="true" requiredMessage="El usuario es requerido"></h:inputText>
 			
-			<h:outputLabel value="Clave : *"></h:outputLabel>
+			<h:outputLabel value="Clave : *" styleClass="colorText"></h:outputLabel>
 			<h:inputSecret id="txtIdClave" value="#{login.clave}" required="true" requiredMessage="La clave es requerida"></h:inputSecret>
 			
 			

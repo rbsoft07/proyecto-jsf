@@ -7,29 +7,36 @@
 
 <h:head>
 	<title>Pantalla Principal</title>
+ 	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
 </h:head>
 <h:body> 
-	Bienvenido a la pantalla principal.
+	<h2 style="margin-bottom: 15px">Bienvenido a la pantalla principal.</h2>
 	
-	<h:dataTable id="idTblEmpleados">
+	<h:dataTable id="idTblEmpleados" var="ObjEmpleado" value="#{principalController.lstEmpleados}" headerClass="headerTable" rowClasses="rowTable rowTableLine">
 		<h:column>
 			<f:facet name="header"> Nombre </f:facet>
+			<h:outputText value="#{ObjEmpleado.nombre}" />
 		</h:column>
 
 		<h:column>
 			<f:facet name="header"> Primer Apellido </f:facet>
+			<h:outputText value="#{ObjEmpleado.primerApellido}" />
 		</h:column>
 
 		<h:column>
 			<f:facet name="header"> Segundo Apellido </f:facet>
+			<h:outputText value="#{ObjEmpleado.segundoApellido}" />
 		</h:column>
 
 		<h:column>
 			<f:facet name="header"> Puesto </f:facet>
+			<h:outputText value="#{ObjEmpleado.puesto}" />
 		</h:column>
 
 		<h:column>
 			<f:facet name="header"> Estatus </f:facet>
+			<h:outputText value="HABILITADO" rendered="#{ObjEmpleado.estatus}" />
+			<h:outputText value="INHABILITADO" rendered="#{!ObjEmpleado.estatus}" />
 		</h:column>
 
 	</h:dataTable>

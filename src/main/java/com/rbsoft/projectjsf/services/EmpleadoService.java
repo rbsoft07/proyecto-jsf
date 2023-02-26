@@ -29,6 +29,7 @@ public class EmpleadoService {
 		Empleado empleadoFB = new Empleado();
 		Empleado empleadoYoutube = new Empleado();
 		Empleado empleadoGoogle = new Empleado();
+		Empleado empleadoPlazit = new Empleado();
 		
 		empleadoFB.setId( new Long (1254));
 		empleadoFB.setNombre("Manuel");
@@ -56,9 +57,21 @@ public class EmpleadoService {
 		empleadoGoogle.setEstatus(true);
 		empleadoGoogle.setLugarTrabajo("Google");;
 
+		
+		empleadoPlazit.setId(new Long (1257));
+		empleadoPlazit.setNombre("Luis");
+		empleadoPlazit.setPrimerApellido("Granderf");
+		empleadoPlazit.setSegundoApellido("Simer");
+		empleadoPlazit.setPuesto("Developer Senior Java");
+		empleadoPlazit.setEstatus(false);
+		empleadoPlazit.setLugarTrabajo("PLATZI");;
+		
+		
 		lstEmpeados.add(empleadoFB);
 		lstEmpeados.add(empleadoYoutube);
 		lstEmpeados.add(empleadoGoogle);
+		lstEmpeados.add(empleadoPlazit);
+		
 		
 		return lstEmpeados;
 		

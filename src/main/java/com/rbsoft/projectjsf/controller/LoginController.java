@@ -16,12 +16,14 @@ import javax.faces.view.facelets.FaceletContext;
  *         de login.xhtml
  */
 
-@ManagedBean(name = "login")
+
 @RequestScoped
+@ManagedBean
 public class LoginController implements Serializable {
 
 	// Usuario que ingresa en el login
 	public String usuario;
+	
 	// Clave que ingresa en el login
 	public String clave;
 
@@ -30,7 +32,8 @@ public class LoginController implements Serializable {
 	}
 
 	public void ingresar() {
-		System.out.println(" Usuario : " + usuario);
+		System.out.println(" Usuario : " + getUsuario());
+		System.out.println(" Clave   : " + getClave());
 
 		if (usuario.equals("user") && clave.equals("1234")) {
 //			FacesContext.getCurrentInstance().addMessage("idFormLogin:txtIdUsuario",

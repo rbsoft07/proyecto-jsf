@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.rbsoft.projectjsf.entity.Empleado;
 
+
 /**
  * @author RBSOFT
  * Clase que permite realizar la logica de negocio para empleados. 
@@ -29,23 +30,31 @@ public class EmpleadoService {
 		Empleado empleadoYoutube = new Empleado();
 		Empleado empleadoGoogle = new Empleado();
 		
+		empleadoFB.setId( new Long (1254));
 		empleadoFB.setNombre("Manuel");
 		empleadoFB.setPrimerApellido("Carraño");
 		empleadoFB.setSegundoApellido("Florentino");
 		empleadoFB.setPuesto("Senior PHP Developer ");
 		empleadoFB.setEstatus(true);
+		empleadoFB.setLugarTrabajo("FaceBook");
 		
+		
+		empleadoYoutube.setId( new Long (1255));
 		empleadoYoutube.setNombre("Fred");
 		empleadoYoutube.setPrimerApellido("Fria");
 		empleadoYoutube.setSegundoApellido("Moquete");
 		empleadoYoutube.setPuesto("Semi-Senior Angular FrontEnd ");
 		empleadoYoutube.setEstatus(true);
+		empleadoYoutube.setLugarTrabajo("Youtube");
 		
+		
+		empleadoGoogle.setId(new Long (1256));
 		empleadoGoogle.setNombre("Joel");
 		empleadoGoogle.setPrimerApellido("Zazuga");
 		empleadoGoogle.setSegundoApellido("Grax");
 		empleadoGoogle.setPuesto("Manager IT Deparment");
 		empleadoGoogle.setEstatus(true);
+		empleadoGoogle.setLugarTrabajo("Google");;
 
 		lstEmpeados.add(empleadoFB);
 		lstEmpeados.add(empleadoYoutube);
@@ -53,6 +62,5 @@ public class EmpleadoService {
 		
 		return lstEmpeados;
 		
-
 	}
 }

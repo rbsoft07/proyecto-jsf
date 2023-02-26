@@ -10,24 +10,45 @@ import java.io.Serializable;
  */
 public class Empleado implements Serializable {
 
+	private Long id;
 	private String nombre;
 	private String primerApellido;
 	private String segundoApellido;
 	private String puesto;
 	private boolean estatus;
+	private String lugarTrabajo;
 
 	public Empleado() {
 
 	}
 
-	public Empleado(String nombre, String primerApellido, String segundoApellido, String puesto, boolean estatus) {
+	public Empleado( Long id, String nombre, String primerApellido, String segundoApellido, String puesto, boolean estatus , String lugarTrabajo) {
+		this.id = id;
 		this.nombre = nombre;
 		this.primerApellido = primerApellido;
 		this.segundoApellido = segundoApellido;
 		this.puesto = puesto;
 		this.estatus = estatus;
+		this.lugarTrabajo = lugarTrabajo;
 	}
 
+	
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}	
+	
+	
+	
 	/**
 	 * @return the nombre
 	 */
@@ -98,4 +119,21 @@ public class Empleado implements Serializable {
 		this.estatus = estatus;
 	}
 
+	/**
+	 * @return the lugarTrabajo
+	 */
+	public String getLugarTrabajo() {
+		return lugarTrabajo;
+	}
+
+	/**
+	 * @param lugarTrabajo the lugarTrabajo to set
+	 */
+	public void setLugarTrabajo(String lugarTrabajo) {
+		this.lugarTrabajo = lugarTrabajo;
+	}
+
+
+	
+	
 }

@@ -7,12 +7,22 @@
 
 <h:head>
 	<title>Pantalla Principal</title>
- 	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
 </h:head>
-<h:body> 
-	<h2 style="margin-bottom: 15px">Bienvenido a la pantalla principal.</h2>
-	
-	<h:dataTable id="idTblEmpleados" var="ObjEmpleado" value="#{principalController.lstEmpleados}" headerClass="headerTable" rowClasses="rowTable rowTableLine">
+<h:body>
+	<h2 style="margin-bottom: 15px">Bienvenido a la pantalla
+		principal.</h2>
+
+	<h:dataTable id="idTblEmpleados" var="ObjEmpleado"
+		value="#{principalController.lstEmpleados}" headerClass="headerTable"
+		rowClasses="rowTable rowTableLine">
+
+		<h:column>
+			<f:facet name="header"> Código </f:facet>
+			<h:outputText value="#{ObjEmpleado.id}" />
+		</h:column>
+
+
 		<h:column>
 			<f:facet name="header"> Nombre </f:facet>
 			<h:outputText value="#{ObjEmpleado.nombre}" />
@@ -31,6 +41,11 @@
 		<h:column>
 			<f:facet name="header"> Puesto </f:facet>
 			<h:outputText value="#{ObjEmpleado.puesto}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header"> Lugar de Trabajo </f:facet>
+			<h:outputText value="#{ObjEmpleado.lugarTrabajo}" />
 		</h:column>
 
 		<h:column>

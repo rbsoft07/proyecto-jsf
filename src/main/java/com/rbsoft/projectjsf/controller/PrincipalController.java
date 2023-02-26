@@ -30,7 +30,7 @@ public class PrincipalController {
 	 * Servicio de empleados con la logica de negocio
 	 * 
 	 */
-	private EmpleadoService objEmpleadoServoce = new EmpleadoService();
+	private EmpleadoService objEmpleadoService = new EmpleadoService();
 
 	@PostConstruct
 	public void init() {
@@ -43,7 +43,7 @@ public class PrincipalController {
 	 * 
 	 */
 	public void consultarEmpleados() {
-		setLstEmpleados(getObjEmpleadoServoce().consultarEmpleados());
+		setLstEmpleados(getObjEmpleadoService().consultarEmpleados());
 	}
 
 	/**
@@ -61,17 +61,17 @@ public class PrincipalController {
 	}
 
 	/**
-	 * @return the objEmpleadoServoce
+	 * @return the objEmpleadoService
 	 */
-	public EmpleadoService getObjEmpleadoServoce() {
-		return objEmpleadoServoce;
+	public EmpleadoService getObjEmpleadoService() {
+		return objEmpleadoService;
 	}
 
 	/**
-	 * @param objEmpleadoServoce the objEmpleadoServoce to set
+	 * @param objEmpleadoService the objEmpleadoService to set
 	 */
-	public void setObjEmpleadoServoce(EmpleadoService objEmpleadoServoce) {
-		this.objEmpleadoServoce = objEmpleadoServoce;
+	public void setObjEmpleadoService(EmpleadoService objEmpleadoServoce) {
+		this.objEmpleadoService = objEmpleadoServoce;
 	}
 	
 	

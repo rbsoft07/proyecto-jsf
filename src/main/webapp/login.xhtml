@@ -3,7 +3,6 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
-
 <h:head>
 	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
 </h:head>
@@ -14,20 +13,16 @@
 		<h:outputLabel value="Bienvenido al Login">
 		</h:outputLabel>
 		<h:panelGrid columns="2">
+
 			<h:outputLabel value="Usuario : *"  styleClass="colorText"></h:outputLabel>
-			<h:inputText id="txtIdUsuario" value="#{login.usuario}" required="true" requiredMessage="El usuario es requerido"></h:inputText>
-			
+			<h:inputText id="txtIdUsuario" value="#{loginController.usuario}" required="true" requiredMessage="El usuario es requerido"></h:inputText>
+
 			<h:outputLabel value="Clave : *" styleClass="colorText"></h:outputLabel>
-			<h:inputSecret id="txtIdClave" value="#{login.clave}" required="true" requiredMessage="La clave es requerida"></h:inputSecret>
-			
-			
-			<h:commandButton id="idBtnEntrar" value="Entrar" action="#{login.ingresar}"></h:commandButton>
+			<h:inputSecret id="txtIdClave" value="#{loginController.clave}" required="true" requiredMessage="La clave es requerida"></h:inputSecret>
+
+			<h:commandButton id="idBtnEntrar" value="Entrar" action="#{loginController.ingresar}"></h:commandButton>
 		</h:panelGrid>
-
-		
 		<br />
-
 	</h:form>
-
 </h:body>
 </html>

@@ -39,7 +39,7 @@ public class LoginController {
 	public void ingresar() {
 		System.out.println("Usuario: " + usuario);
 		
-		if (usuario.equals("devpredator") && password.equals("12345")) {
+		if (usuario.equals("rbsoft") && password.equals("12345")) {
 
 			try {
 				UsuarioDTO usuarioDTO = new UsuarioDTO();

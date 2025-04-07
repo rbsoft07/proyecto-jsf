@@ -31,6 +31,7 @@ public class LoginController implements Serializable {
 
 	}
 
+	//Validacion para ingreso de aplicacion
 	public void ingresar() {
 		System.out.println(" Usuario : " + getUsuario());
 		System.out.println(" Clave   : " + getClave());

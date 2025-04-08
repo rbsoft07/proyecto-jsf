@@ -5,9 +5,15 @@ package com.rbsoft.projectjsf.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * @author RBSOFT Clase que representa a un empleado
  */
+
+@Entity
+@Table(name = "empleado")
 public class Empleado implements Serializable {
 
 	private Long id;

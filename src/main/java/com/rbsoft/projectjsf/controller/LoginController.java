@@ -37,9 +37,6 @@ public class LoginController implements Serializable {
 		System.out.println(" Clave   : " + getClave());
 
 		if (usuario.equals("user") && clave.equals("1234")) {
-//			FacesContext.getCurrentInstance().addMessage("idFormLogin:txtIdUsuario",
-//					new FacesMessage(FacesMessage.SEVERITY_INFO, "Usuario y/o Clave Correcto", ""));
-			
 			try {
 				this.redireccionar("principal.xhtml");
 			} catch (IOException e) {
@@ -51,7 +48,6 @@ public class LoginController implements Serializable {
 			FacesContext.getCurrentInstance().addMessage("idFormLogin:txtIdUsuario",
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario y/o Clave incorrecta", ""));
 		}
-
 	}
 
 	

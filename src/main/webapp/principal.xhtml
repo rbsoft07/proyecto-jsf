@@ -13,45 +13,45 @@
 	<h2 style="margin-bottom: 15px">Bienvenido a la pantalla
 		principal.</h2>
 
-	<h:dataTable id="idTblEmpleados" var="ObjEmpleado"
+	<h:dataTable id="idTblEmpleados" var="objEmpleado"
 		value="#{principalController.lstEmpleados}" headerClass="headerTable"
 		rowClasses="rowTable rowTableLine">
 
 		<h:column>
 			<f:facet name="header"> Código </f:facet>
-			<h:outputText value="#{ObjEmpleado.id}" />
+			<h:outputText value="#{objEmpleado.id}" />
 		</h:column>
 
 
 		<h:column>
 			<f:facet name="header"> Nombre </f:facet>
-			<h:outputText value="#{ObjEmpleado.nombre}" />
+			<h:outputText value="#{objEmpleado.nombre}" />
 		</h:column>
 
 		<h:column>
 			<f:facet name="header"> Primer Apellido </f:facet>
-			<h:outputText value="#{ObjEmpleado.primerApellido}" />
+			<h:outputText value="#{objEmpleado.primerApellido}" />
 		</h:column>
 
 		<h:column>
 			<f:facet name="header"> Segundo Apellido </f:facet>
-			<h:outputText value="#{ObjEmpleado.segundoApellido}" />
+			<h:outputText value="#{objEmpleado.segundoApellido}" />
 		</h:column>
 
 		<h:column>
 			<f:facet name="header"> Puesto </f:facet>
-			<h:outputText value="#{ObjEmpleado.puesto}" />
+			<h:outputText value="#{objEmpleado.puesto}" />
 		</h:column>
 
 		<h:column>
 			<f:facet name="header"> Lugar de Trabajo </f:facet>
-			<h:outputText value="#{ObjEmpleado.lugarTrabajo}" />
+			<h:outputText value="#{objEmpleado.lugarTrabajo}" />
 		</h:column>
 
 		<h:column>
 			<f:facet name="header"> Estatus </f:facet>
-			<h:outputText value="HABILITADO" rendered="#{ObjEmpleado.estatus}" />
-			<h:outputText value="INHABILITADO" rendered="#{!ObjEmpleado.estatus}" />
+			<h:outputText value="HABILITADO" rendered="#{objEmpleado.estatus}" />
+			<h:outputText value="INHABILITADO" rendered="#{!objEmpleado.estatus}" />
 		</h:column>
 
 	</h:dataTable>

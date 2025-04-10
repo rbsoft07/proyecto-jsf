@@ -2,21 +2,29 @@
 	color: green;
 }
 
-.headerTable{
+.headerTable {
 	text-align: center;
 	background: none repeat scroll #EEE4B0;
 	border-bottom: 2px solid #20189B;
 	padding: 20px
 }
 
-.rowTable{
+.rowTable {
 	text-align: center;
 	background: none repeat scroll 0 0 #FFFFFF;
 	border-top: 2px solid #BBBBBB;
 }
 
-.rowTableLine{
+.rowTableLine {
 	text-align: center;
 	background: none repeat scroll #75C1C6;
 	border-top: 2px solid #BBBBBB;
+}
+
+.ui-panelgrid.showcase-text-align-center .ui-grid-responsive .ui-panelgrid-cell {
+	text-align: center;
+}
+
+.customPanelGrid .ui-panelgrid-content {
+	align-items: center;
 }

@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
 </h:head>
@@ -12,16 +13,27 @@
 
 		<h:outputLabel value="Bienvenido al Login">
 		</h:outputLabel>
-		<h:panelGrid columns="2">
 
-			<h:outputLabel value="Usuario : *"  styleClass="colorText"></h:outputLabel>
-			<h:inputText id="txtIdUsuario" value="#{loginController.usuario}" required="true" requiredMessage="El usuario es requerido"></h:inputText>
+		<div class="card">
 
-			<h:outputLabel value="Clave : *" styleClass="colorText"></h:outputLabel>
-			<h:inputSecret id="txtIdClave" value="#{loginController.clave}" required="true" requiredMessage="La clave es requerida"></h:inputSecret>
+			<p:panel id="pnInicio" header="Inicio de session">
+				<p:panelGrid id="pnLogin" columns="1" layout="grid"
+					styleClass="showcase-text-align-center"
+					columnClasses="col-3 md:col-3 xl:col-2, col-3 md:col-3 xl:col-2"
+					contentStyle="ui-fluid">
+					<p:outputLabel value="Usuario : *" styleClass="colorText"></p:outputLabel>
+					<p:inputText id="txtIdUsuario" value="#{loginController.usuario}"
+						required="true" requiredMessage="El usuario es requerido"></p:inputText>
 
-			<h:commandButton id="idBtnEntrar" value="Entrar" action="#{loginController.ingresar}"></h:commandButton>
-		</h:panelGrid>
+					<p:outputLabel value="Clave : *" styleClass="colorText"></p:outputLabel>
+					<p:password id="txtIdClave" value="#{loginController.clave}"
+						required="true" requiredMessage="La clave es requerida"></p:password>
+
+					<p:commandButton id="idBtnEntrar" value="Entrar"
+						action="#{loginController.ingresar}"></p:commandButton>
+				</p:panelGrid>
+			</p:panel>
+		</div>
 		<br />
 	</h:form>
 </h:body>

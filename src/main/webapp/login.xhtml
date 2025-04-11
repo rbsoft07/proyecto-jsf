@@ -5,7 +5,8 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet> -->
 </h:head>
 <h:body>
 
@@ -16,20 +17,20 @@
 
 		<div class="card">
 
+        <p:growl id="growl-sticky" showDetail="true" sticky="true" />
 			<p:panel id="pnInicio" header="Inicio de session">
-				<p:panelGrid id="pnLogin" columns="1" layout="grid"
-					styleClass="showcase-text-align-center"
-					columnClasses="col-3 md:col-3 xl:col-2, col-3 md:col-3 xl:col-2"
-					contentStyle="ui-fluid">
-					<p:outputLabel value="Usuario : *" styleClass="colorText"></p:outputLabel>
+				<p:panelGrid id="pnLogin" columns="2"  layout="grid" columnClasses="ui-g-12 ui-md-2, ui-g-12 ui-md-4"  >
+					
+					<p:outputLabel value="Usuario : " styleClass="colorText" for="txtIdUsuario"></p:outputLabel>
 					<p:inputText id="txtIdUsuario" value="#{loginController.usuario}"
 						required="true" requiredMessage="El usuario es requerido"></p:inputText>
 
-					<p:outputLabel value="Clave : *" styleClass="colorText"></p:outputLabel>
+					<p:outputLabel value="Clave : " styleClass="colorText" for="txtIdClave"></p:outputLabel>
 					<p:password id="txtIdClave" value="#{loginController.clave}"
 						required="true" requiredMessage="La clave es requerida"></p:password>
 
-					<p:commandButton id="idBtnEntrar" value="Entrar"
+					<p:outputLabel></p:outputLabel>
+					<p:commandButton id="idBtnEntrar" value="Entrar" update="pnLogin, growl-sticky"
 						action="#{loginController.ingresar}"></p:commandButton>
 				</p:panelGrid>
 			</p:panel>

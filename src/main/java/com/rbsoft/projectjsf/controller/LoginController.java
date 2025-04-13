@@ -22,10 +22,10 @@ import javax.faces.view.facelets.FaceletContext;
 public class LoginController implements Serializable {
 
 	// Usuario que ingresa en el login
-	public String usuario;
+	public String usuario = "user";
 	
 	// Clave que ingresa en el login
-	public String clave;
+	public String clave = "1234";
 
 	public LoginController() {
 

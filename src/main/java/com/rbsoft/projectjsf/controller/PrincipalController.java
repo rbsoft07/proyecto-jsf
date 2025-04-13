@@ -19,7 +19,11 @@ import com.rbsoft.projectjsf.services.EmpleadoService;
 @ManagedBean
 @ViewScoped
 public class PrincipalController {
+	
+	
+	private Empleado selectEmpleado;
 
+	private List<Empleado> lstEmpleadosFiltrados;
 	/**
 	 * Lista de empleados para el datatable
 	 * 
@@ -73,8 +77,26 @@ public class PrincipalController {
 	public void setObjEmpleadoService(EmpleadoService objEmpleadoServoce) {
 		this.objEmpleadoService = objEmpleadoServoce;
 	}
-	
-	
-	
 
+	/**
+	 * @return the selectEmpleado
+	 */
+	public Empleado getSelectEmpleado() {
+		return selectEmpleado;
+	}
+
+	/**
+	 * @param selectEmpleado the selectEmpleado to set
+	 */
+	public void setSelectEmpleado(Empleado selectEmpleado) {
+		this.selectEmpleado = selectEmpleado;
+	}
+
+	public List<Empleado> getLstEmpleadosFiltrados() {
+		return lstEmpleadosFiltrados;
+	}
+
+	public void setLstEmpleadosFiltrados(List<Empleado> lstEmpleadosFiltrados) {
+		this.lstEmpleadosFiltrados = lstEmpleadosFiltrados;
+	}
 }

@@ -31,6 +31,11 @@ public class EmpleadoService {
 		Empleado empleadoGoogle = new Empleado();
 		Empleado empleadoPlazit = new Empleado();
 		
+		Empleado empleadoOracle = new Empleado();
+		Empleado empleadoMicrosoft = new Empleado();
+		Empleado empleadoInstagram = new Empleado();
+		Empleado empleadoTiktok = new Empleado();
+		
 		empleadoFB.setId( new Long (1254));
 		empleadoFB.setNombre("Manuel");
 		empleadoFB.setPrimerApellido("Carraño");
@@ -66,11 +71,56 @@ public class EmpleadoService {
 		empleadoPlazit.setEstatus(false);
 		empleadoPlazit.setLugarTrabajo("PLATZI");;
 		
-		
+		//////////////////////////////////////////////////
+		empleadoOracle.setId(new Long (1257));
+		empleadoOracle.setNombre("Manuel");
+		empleadoOracle.setPrimerApellido("Granderf");
+		empleadoOracle.setSegundoApellido("Simer");
+		empleadoOracle.setPuesto("Developer Cloud java");
+		empleadoOracle.setEstatus(true);
+		empleadoOracle.setLugarTrabajo("ORACLE");;
+
+
+
+		empleadoMicrosoft.setId(new Long (1258));
+		empleadoMicrosoft.setNombre("Cristian");
+		empleadoMicrosoft.setPrimerApellido("Grifo");
+		empleadoMicrosoft.setSegundoApellido("Simer");
+		empleadoMicrosoft.setPuesto("Developer .net core");
+		empleadoMicrosoft.setEstatus(false);
+		empleadoMicrosoft.setLugarTrabajo("Microsoft");;
+
+
+
+		empleadoInstagram.setId(new Long (1259));
+		empleadoInstagram.setNombre("Frank");
+		empleadoInstagram.setPrimerApellido("Farmers");
+		empleadoInstagram.setSegundoApellido("Simer");
+		empleadoInstagram.setPuesto("Disegner UI/UX");
+		empleadoInstagram.setEstatus(false);
+		empleadoInstagram.setLugarTrabajo("Instagram");;
+
+
+		empleadoTiktok.setId(new Long (1260));
+		empleadoTiktok.setNombre("Vincent");	
+		empleadoTiktok.setPrimerApellido("Grandest");
+		empleadoTiktok.setSegundoApellido("Simer");
+		empleadoTiktok.setPuesto("QA Automation");
+		empleadoTiktok.setEstatus(false);
+		empleadoTiktok.setLugarTrabajo("Tik Tok");;
+
+
+
+
 		lstEmpeados.add(empleadoFB);
 		lstEmpeados.add(empleadoYoutube);
 		lstEmpeados.add(empleadoGoogle);
 		lstEmpeados.add(empleadoPlazit);
+
+		lstEmpeados.add(empleadoOracle);
+		lstEmpeados.add(empleadoMicrosoft);
+		lstEmpeados.add(empleadoInstagram);
+		lstEmpeados.add(empleadoTiktok);
 		
 		
 		return lstEmpeados;

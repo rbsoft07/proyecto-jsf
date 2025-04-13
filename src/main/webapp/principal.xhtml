@@ -1,54 +1,90 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	 xmlns:p="http://primefaces.org/ui">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 
 <h:head>
-	<title>Pantalla Principal</title>
-	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+    <title>Pantalla Principal</title>
+    <h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
 </h:head>
 <h:body>
-	<h2 style="margin-bottom: 15px">Bienvenido a la pantalla
-		principal.</h2>
 
-	<p:dataTable id="idTblEmpleados" var="objEmpleado"
-		value="#{principalController.lstEmpleados}" >
-
-		<p:column headerText="Código">
-			<h:outputText value="#{objEmpleado.id}" />
-		</p:column>
+    <p:outputLabel value="Bienvenido a la pantallaprincipal."></p:outputLabel>
 
 
-		<p:column headerText="Nombre">
-			<h:outputText value="#{objEmpleado.nombre}" />
-		</p:column>
+    <div class="card flex justify-content-between">
+        <h:form>
 
-		<p:column headerText="Primer Apellido">
-			<h:outputText value="#{objEmpleado.primerApellido}" />
-		</p:column>
+            <p:dataTable id="idTblEmpleados" var="objEmpleado"
+                         value="#{principalController.lstEmpleados}" paginator="true"
+                         paginatorPosition="top" rows="2"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
+                         currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} registro"
+                         rowsPerPageTemplate="2,4,8,{ShowAll|'Todos'}"
+                         emptyMessage="No se encontraron registros"
+                         filteredValue="#{principalController.lstEmpleadosFiltrados}">
 
-		<p:column headerText="Segundo Apellido">
-			<h:outputText value="#{objEmpleado.segundoApellido}" />
-		</p:column>
 
-		<p:column headerText="Puesto">
-			<h:outputText value="#{objEmpleado.puesto}" />
-		</p:column>
+                <f:facet name="{Exporters}">
+                    <div style="float: right; padding-top: 5px;">
+                        <h:commandLink style="margin-right: 2px">
+                            <p:graphicImage name="imgs/xmlImage.png" width="24"/>
+                            <p:dataExporter target="idTblEmpleados" type="xml" fileName="listaEmpleados"/>
+                        </h:commandLink>
+                        <h:commandLink style="margin-right: 2px">
+                            <p:graphicImage name="imgs/pdf.png" width="24"/>
+                            <p:dataExporter target="idTblEmpleados" type="pdf" fileName="listaEmpleados"/>
+                        </h:commandLink>
+                        <h:commandLink style="margin-right: 2px">
+                            <p:graphicImage name="imgs/csv.png" width="24"/>
+                            <p:dataExporter target="idTblEmpleados" type="csv" fileName="listaEmpleados"/>
+                        </h:commandLink>
+                        <h:commandLink>
+                            <p:graphicImage name="imgs/excel.png" width="20"/>
+                            <p:dataExporter target="idTblEmpleados" type="xls" fileName="listaEmpleados"/>
+                        </h:commandLink>
+                    </div>
+                </f:facet>
 
-		<p:column headerText="Lugar De Trabajo">
-			<h:outputText value="#{objEmpleado.lugarTrabajo}" />
-		</p:column>
+                <p:column headerText="Código">
+                    <h:outputText value="#{objEmpleado.id}"/>
+                </p:column>
 
-		<p:column headerText="Estado">
-			<h:outputText value="HABILITADO" rendered="#{objEmpleado.estatus}" />
-			<h:outputText value="INHABILITADO" rendered="#{!objEmpleado.estatus}" />
-		</p:column>
+                <p:column headerText="Nombre" sortBy="#{objEmpleado.nombre}" filterBy="#{objEmpleado.nombre}"
+                          filterMatchMode="contains" filterPlaceholder="Filtro Por nombre">
+                    <h:outputText value="#{objEmpleado.nombre}"/>
+                </p:column>
 
-	</p:dataTable>
-	
-	<p:spinner />
+                <p:column headerText="Primer Apellido">
+                    <h:outputText value="#{objEmpleado.primerApellido}"/>
+                </p:column>
+
+                <p:column headerText="Segundo Apellido">
+                    <h:outputText value="#{objEmpleado.segundoApellido}"/>
+                </p:column>
+
+                <p:column headerText="Puesto" sortBy="#{objEmpleado.puesto}" filterBy="#{objEmpleado.puesto}"
+                          filterMatchMode="contains" filterPlaceholder="Filtro Por puesto">
+                    <h:outputText value="#{objEmpleado.puesto}"/>
+                </p:column>
+
+                <p:column headerText="Lugar De Trabajo"
+                          sortBy="#{objEmpleado.lugarTrabajo}" filterBy="#{objEmpleado.lugarTrabajo}"
+                          filterMatchMode="contains" filterPlaceholder="Filtro trabajo">
+                    <h:outputText value="#{objEmpleado.lugarTrabajo}"/>
+                </p:column>
+
+                <p:column headerText="Estado">
+                    <h:outputText value="HABILITADO" rendered="#{objEmpleado.estatus}"/>
+                    <h:outputText value="INHABILITADO" rendered="#{!objEmpleado.estatus}"/>
+                </p:column>
+
+            </p:dataTable>
+        </h:form>
+    </div>
 </h:body>
 </html>

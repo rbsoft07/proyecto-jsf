@@ -24,17 +24,17 @@
 
                 <p:panelGrid id="pnLogin" columns="1" layout="grid">
 
-                    <p:outputLabel value="Usuario : " styleClass="colorText" for="txtIdUsuario"></p:outputLabel>
+                    <p:outputLabel value="Usuario : " styleClass="colorText" for="txtIdUsuario"/>
                     <p:inputText id="txtIdUsuario" value="#{loginController.usuario}" required="true"
-                                 requiredMessage="El usuario es requerido"></p:inputText>
+                                 requiredMessage="El usuario es requerido"/>
 
-                    <p:outputLabel value="Clave : " styleClass="colorText" for="txtIdClave"></p:outputLabel>
+                    <p:outputLabel value="Clave : " styleClass="colorText" for="txtIdClave"/>
                     <p:password id="txtIdClave" value="#{loginController.clave}" required="true"
-                                requiredMessage="La clave es requerida"></p:password>
+                                requiredMessage="La clave es requerida"/>
 
-                    <p:outputLabel></p:outputLabel>
+                    <p:outputLabel/>
                     <p:commandButton id="idBtnEntrar" value="Entrar" update="pnLogin, growl-sticky"
-                                     action="#{loginController.ingresar}"></p:commandButton>
+                                     action="#{loginController.ingresar}"/>
                 </p:panelGrid>
 
             </p:panel>

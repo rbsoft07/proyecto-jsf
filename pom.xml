@@ -10,7 +10,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>Project-jsf Maven Webapp</name> <!-- Nombre del proyecto con el arquetype -->
+	<name>Project-jsf Maven Webapp</name> <!-- Nombre del proyecto con el
+	arquetype -->
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
@@ -45,11 +46,13 @@
 			<artifactId>primefaces</artifactId>
 			<version>12.0.0</version>
 		</dependency>
+
 		<!-- ############################################### -->
 
 
 		<!-- ########## DEPENDENCIA CONEXION BASE DE DATOS ########## -->
-		<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+		<!--
+		https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
 		<dependency>
 			<groupId>javax.annotation</groupId>
 			<artifactId>javax.annotation-api</artifactId>
@@ -57,7 +60,8 @@
 		</dependency>
 
 
-		<!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
+		<!--
+		https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>javax.persistence-api</artifactId>
@@ -91,11 +95,11 @@
 
 
 		<!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
-<!--		<dependency>-->
-<!--			<groupId>com.itextpdf</groupId>-->
-<!--			<artifactId>itextpdf</artifactId>-->
-<!--			<version>5.5.13.3</version>-->
-<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>com.itextpdf</groupId>-->
+		<!--			<artifactId>itextpdf</artifactId>-->
+		<!--			<version>5.5.13.3</version>-->
+		<!--		</dependency>-->
 
 
 		<!-- https://mvnrepository.com/artifact/com.lowagie/itext -->
@@ -125,7 +129,8 @@
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.1.0</version>
 				</plugin>
-				<!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+				<!-- see
+				http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
 				<plugin>
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>3.0.2</version>

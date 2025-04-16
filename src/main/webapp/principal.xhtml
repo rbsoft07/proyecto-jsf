@@ -10,16 +10,17 @@
 <h:head>
     <title>Pantalla Principal</title>
     <h:outputStylesheet library="css" name="style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalble=no"/>
 </h:head>
 <h:body>
 
-    <p:outputLabel value="Bienvenido a la Pantalla Principal."  styleClass="centered-text" />
+    <p:outputLabel value="Bienvenido #{sessionController.usuarioDTO.usuario}  a la Pantalla Principal."  styleClass="centered-text" />
 
 
     <div class="card flex justify-content-between">
         <h:form>
-
-            <p:dataTable id="idTblEmpleados" var="objEmpleado"
+			<p:commandButton value="Cerrar Session" action="#{sessionClosedController.cerrarSession}"></p:commandButton>
+            <p:dataTable id="idTblEmpleados" var="objEmpleado" reflow="true"
                          value="#{principalController.lstEmpleados}" paginator="true"
                          paginatorPosition="top" rows="2"
                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"

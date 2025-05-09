@@ -1,5 +1,10 @@
-/target/
+/target/maven-status
+/target/classes
+/target/m2e-wtp
+/target/maven-archiver
+/target/Project-jsf
 .settings
 .classpath
 .project
 .idea
+.vscode

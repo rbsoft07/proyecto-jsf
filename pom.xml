@@ -7,7 +7,7 @@
 
 	<groupId>com.rbsoftcom</groupId>
 	<artifactId>Project-jsf</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>V1.4</version>
 	<packaging>war</packaging>
 
 	<name>Project-jsf Maven Webapp</name> <!-- Nombre del proyecto con el
@@ -39,7 +39,6 @@
 			<version>2.2.20</version>
 		</dependency>
 
-
 		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
@@ -50,9 +49,11 @@
 		<!-- ############################################### -->
 
 
+
+
 		<!-- ########## DEPENDENCIA CONEXION BASE DE DATOS ########## -->
-		<!--
-		https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+		
+		<!--https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
 		<dependency>
 			<groupId>javax.annotation</groupId>
 			<artifactId>javax.annotation-api</artifactId>
@@ -78,6 +79,9 @@
 		<!-- ########################################################## -->
 
 
+
+		<!-- ########## DEPENDENCIA DESCARGAR XML, PDF, XLS, CSV ########## -->
+
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -94,20 +98,14 @@
 		</dependency>
 
 
-		<!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
-		<!--		<dependency>-->
-		<!--			<groupId>com.itextpdf</groupId>-->
-		<!--			<artifactId>itextpdf</artifactId>-->
-		<!--			<version>5.5.13.3</version>-->
-		<!--		</dependency>-->
-
-
 		<!-- https://mvnrepository.com/artifact/com.lowagie/itext -->
 		<dependency>
 			<groupId>com.lowagie</groupId>
 			<artifactId>itext</artifactId>
 			<version>2.1.7</version>
 		</dependency>
+		<!-- ########################################################## -->
+
 
 
 		<dependency>

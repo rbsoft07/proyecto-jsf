@@ -8,7 +8,7 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 #COPY context.xml /usr/local/tomcat/webapps.dist/manager/META-INF/context.xml
 
 # Copiar nuestro archivo WAR a la carpeta webapps
-COPY target/Project-jsf.war /usr/local/tomcat/webappsAapp.war
+COPY target/Project-jsf.war /usr/local/tomcat/webapps/app.war
 
 # Puerto donde escuchará Tomcat
 EXPOSE 8080

@@ -1,17 +1,18 @@
-FROM tomcat:9.0-jdk11
+# Usamos la imagen oficial de Tomcat 9.0 como base
+FROM tomcat:9.0
 
-# Eliminar las aplicaciones por defecto de Tomcat
+# Mantenedor (opcional)
+LABEL maintainer="tu-email@example.com"
+
+# Eliminamos el contenido predeterminado del directorio webapps
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Opcional: Configurar Tomcat para acceder al Manager (para administración)
-#COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
-#COPY context.xml /usr/local/tomcat/webapps.dist/manager/META-INF/context.xml
+# Copiamos el archivo .war a la carpeta webapps de Tomcat
+COPY /target/Project-jsf.war /usr/local/tomcat/webapps/app.war
 
-# Copiar nuestro archivo WAR a la carpeta webapps
-COPY target/Project-jsf.war /usr/local/tomcat/webapps/app.war
+# Script de inicio que usa la variable PORT de Render
+COPY run.sh /usr/local/bin/run.sh
+RUN chmod +x /usr/local/bin/run.sh
 
-# Puerto donde escuchará Tomcat
-EXPOSE 8080
-
-# Iniciar Tomcat
-CMD ["catalina.sh", "run"]
+# Comando de ejecución
+CMD ["sh", "/usr/local/bin/run.sh"]

@@ -8,7 +8,7 @@ LABEL maintainer="rbsoft07@gmail.com"
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copiamos el archivo .war a la carpeta webapps de Tomcat
-COPY /target/Project-jsf.war /usr/local/tomcat/webapps/
+COPY /target/Project-jsf-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/appweb.war
 
 # Script de inicio que usa la variable PORT de Render
 COPY run.sh /usr/local/bin/run.sh

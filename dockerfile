@@ -1,18 +1,25 @@
-# Usamos la imagen oficial de Tomcat 9.0 como base
-FROM tomcat:9.0
+# Usar imagen oficial de Tomcat 9.0 con JDK 11
+FROM tomcat:9.0-jdk11-openjdk
 
 # Mantenedor (opcional)
 LABEL maintainer="rbsoft07@gmail.com"
 
-# Eliminamos el contenido predeterminado del directorio webapps
-RUN rm -rf /usr/local/tomcat/webapps/*
+# Variables de entorno
+ENV CATALINA_HOME /usr/local/tomcat
+ENV PATH $CATALINA_HOME/bin:$PATH
+ENV JAVA_OPTS="-Xms512m -Xmx1024m -Djava.security.egd=file:/dev/./urandom"
 
-# Copiamos el archivo .war a la carpeta webapps de Tomcat
-COPY /target/Project-jsf-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/appweb.war
+# Eliminar las aplicaciones por defecto de Tomcat
+RUN rm -rf $CATALINA_HOME/webapps/*
 
-# Script de inicio que usa la variable PORT de Render
-COPY run.sh /usr/local/bin/run.sh
-RUN chmod +x /usr/local/bin/run.sh
+# Crear el directorio webapps si no existe
+RUN mkdir -p $CATALINA_HOME/webapps
 
-# Comando de ejecución
-CMD ["sh", "/usr/local/bin/run.sh"]
+# Copiar archivo WAR a la carpeta webapps
+COPY target/Project-jsf-0.0.1-SNAPSHOT.war $CATALINA_HOME/webapps/ROOT.war
+
+# Exponer el puerto 8080
+EXPOSE 8080
+
+# Ejecutar Tomcat
+CMD ["catalina.sh", "run"]

@@ -16,7 +16,7 @@ RUN rm -rf $CATALINA_HOME/webapps/*
 RUN mkdir -p $CATALINA_HOME/webapps
 
 # Copiar archivo WAR a la carpeta webapps
-COPY target/Project-jsf-0.0.1-SNAPSHOT.war $CATALINA_HOME/webapps/ROOT.war
+COPY target/Project-jsf.war $CATALINA_HOME/webapps/ROOT.war
 
 # Exponer el puerto 8080
 EXPOSE 8080

@@ -16,12 +16,18 @@ import com.rbsoft.projectjsf.dto.UsuarioDTO;
 @SessionScoped
 public class SessionController {
 	
+	/**
+	 * DTO que mantendra la informacion del usuario Logueado. 
+	 * */
 	
 	private UsuarioDTO usuarioDTO;
 	
+	/**
+	 * Inicializa la sesion del usuario.
+	 */
 	@PostConstruct
 	public void init() {
-		
+		System.out.println("Cargando informacion del usuario en la sesion.. ");
 	}
 
 	/**

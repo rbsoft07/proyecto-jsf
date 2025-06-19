@@ -30,6 +30,9 @@ public class LoginController implements Serializable {
 	// Clave que ingresa en el login
 	public String clave = "1234";
 	
+	/**
+	 * Bean que mantiene la informmacion del usuario logueado en la sesion.
+	 * */
 	
 	@ManagedProperty("#{sessionController}")
 	private SessionController sessionController;
@@ -49,7 +52,6 @@ public class LoginController implements Serializable {
 				
 				usuarioDTO.setUsuario(this.usuario);
 				usuarioDTO.setClave(this.clave);
-				
 				
 				sessionController.setUsuarioDTO(usuarioDTO);
 				

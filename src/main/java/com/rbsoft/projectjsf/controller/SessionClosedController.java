@@ -9,7 +9,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-import javax.faces.view.facelets.FaceletContext;
 
 import com.rbsoft.projectjsf.util.GeneralUtil;
 

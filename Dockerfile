@@ -6,8 +6,7 @@ LABEL maintainer="rbsoft07@gmail.com"
 
 # Variables de entorno
 ENV CATALINA_HOME /usr/local/tomcat
-ENV PATH $CATALINA_HOME/bin:$PATH
-ENV JAVA_OPTS="-Xms512m -Xmx1024m -Djava.security.egd=file:/dev/./urandom"
+#ENV PATH $CATALINA_HOME/bin:$PATH
 
 # Eliminar las aplicaciones por defecto de Tomcat
 RUN rm -rf $CATALINA_HOME/webapps/*
@@ -16,10 +15,10 @@ RUN rm -rf $CATALINA_HOME/webapps/*
 RUN mkdir -p $CATALINA_HOME/webapps
 
 # Copiar archivo WAR a la carpeta webapps
-COPY target/Project-jsf.war $CATALINA_HOME/webapps/ROOT.war
+COPY target/Project-jsf.war $CATALINA_HOME/webapps/appweb.war
 
 # Exponer el puerto 8080
-#EXPOSE 8080
+EXPOSE 8080
 
 # Ejecutar Tomcat
 CMD ["catalina.sh", "run"]

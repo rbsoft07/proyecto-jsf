@@ -19,7 +19,7 @@ RUN mkdir -p $CATALINA_HOME/webapps
 COPY target/Project-jsf.war $CATALINA_HOME/webapps/ROOT.war
 
 # Exponer el puerto 8080
-EXPOSE 8080
+#EXPOSE 8080
 
 # Ejecutar Tomcat
 CMD ["catalina.sh", "run"]

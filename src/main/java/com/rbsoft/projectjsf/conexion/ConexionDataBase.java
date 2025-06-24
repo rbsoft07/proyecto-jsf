@@ -10,7 +10,7 @@ public class ConexionDataBase {
 	
 	
 	public ConexionDataBase() {
-		EMF = Persistence.createEntityManagerFactory("con_ddbb_tienda");
+		EMF = Persistence.createEntityManagerFactory("Persistence_PU");
 	}
 
 	

@@ -15,9 +15,9 @@ public interface DisqueraDAO {
 	
 	void guardar(Disquera disquera);
 	void actulizar(Disquera disquera);
-	void eliminar(Disquera disquera);
-	List<Disquera> lstConlustas(Disquera disquera);
-	DisqueraDAO consultarById(Long id);
+	void eliminar(Long idDisquera);
+	List<Disquera> lstConlustas();
+	Disquera consultarById(Long id);
 	
 
 }

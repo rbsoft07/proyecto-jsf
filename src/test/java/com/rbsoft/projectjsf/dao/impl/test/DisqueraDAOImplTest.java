@@ -6,6 +6,7 @@ package com.rbsoft.projectjsf.dao.impl.test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
@@ -30,8 +31,10 @@ class DisqueraDAOImplTest {
 		Disquera objDisquera = new Disquera();
 		objDisquera.setDescripcion("MegaForces");
 		objDisquera.setFechaCreacion(LocalDateTime.now());
-//		objDisquera.getFechaModificaion(LocalDateTime.now());
-		this.disqueraDAO.guardar(null);
+		objDisquera.setFechaModificaion(LocalDateTime.now());
+		objDisquera.setEstatus(true);
+		
+		this.disqueraDAO.guardar(objDisquera);
 		
 	}
 
@@ -40,7 +43,11 @@ class DisqueraDAOImplTest {
 	 */
 	@Test
 	void testActulizar() {
-		fail("Not yet implemented");
+		Disquera disqueraConsultada = this.disqueraDAO.consultarById(4L);
+		
+		disqueraConsultada.setDescripcion("Disquera Romanof");
+		
+		this.disqueraDAO.actulizar(disqueraConsultada);
 	}
 
 	/**
@@ -48,7 +55,8 @@ class DisqueraDAOImplTest {
 	 */
 	@Test
 	void testEliminar() {
-		fail("Not yet implemented");
+		Long id = 4L;
+		this.disqueraDAO.eliminar(id);
 	}
 
 	/**
@@ -56,7 +64,13 @@ class DisqueraDAOImplTest {
 	 */
 	@Test
 	void testLstConlustas() {
-		fail("Not yet implemented");
+		List<Disquera> lstDisqueras = this.disqueraDAO.lstConlustas();
+		
+		assertTrue(lstDisqueras.size() >0 );
+		lstDisqueras.forEach(disquera -> { 
+			System.out.println("Disquera : " + disquera.getDescripcion());
+		});
+		
 	}
 
 	/**
@@ -64,7 +78,8 @@ class DisqueraDAOImplTest {
 	 */
 	@Test
 	void testConsultarById() {
-		fail("Not yet implemented");
+		Disquera disquera = this.disqueraDAO.consultarById(4L);
+		System.out.println("Disquera " + disquera.getDescripcion());
 	}
 
 }

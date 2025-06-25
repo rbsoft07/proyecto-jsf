@@ -3,6 +3,7 @@
  */
 package com.rbsoft.projectjsf.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
@@ -106,6 +107,7 @@ public class DisqueraDAOImpl implements DisqueraDAO {
 
 		EntityManager entityManager = EMF.createEntityManager();
 
+		@SuppressWarnings("unchecked")
 		TypedQuery<Disquera> queryDisquera = (TypedQuery<Disquera>) entityManager
 				.createQuery("FROM Disquera ORDER BY descripcion");
 
@@ -126,4 +128,42 @@ public class DisqueraDAOImpl implements DisqueraDAO {
 
 	}
 
+	@Override
+	public Disquera consultaByDescriptionJPQL(String desc) {
+		EntityManager entityManager = EMF.createEntityManager();
+		List<Disquera> disqueraByDesc = new ArrayList();
+
+		@SuppressWarnings("unchecked")
+		TypedQuery<Disquera> queryDisquera = (TypedQuery<Disquera>) entityManager
+				.createQuery("FROM Disquera WHERE descripcion = :description");
+		
+		queryDisquera.setParameter("description", desc);
+		
+		disqueraByDesc  = queryDisquera.getResultList();
+		
+		
+		return !disqueraByDesc.isEmpty() ? disqueraByDesc.get(0) : null;
+		
+	}
+
+	@Override
+	public Disquera consultaByDescriptionNative(String desc) {
+
+		EntityManager entityManager = EMF.createEntityManager();
+		List<Disquera> disqueraByDesc = new ArrayList();
+
+		@SuppressWarnings("unchecked")
+		TypedQuery<Disquera> queryDisquera = (TypedQuery<Disquera>) entityManager
+				.createNativeQuery("SELECT * FROM disquera WHERE descripcion = :description",Disquera.class);
+		
+		queryDisquera.setParameter("description", desc);
+		
+		disqueraByDesc  = queryDisquera.getResultList();
+		
+		
+		return !disqueraByDesc.isEmpty() ? disqueraByDesc.get(0) : null;
+	}
+
+	
+	
 }

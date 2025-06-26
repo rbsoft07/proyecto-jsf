@@ -23,7 +23,12 @@ import jakarta.persistence.TypedQuery;
  */
 public class DisqueraDAOImpl implements DisqueraDAO {
 
-	public static final EntityManagerFactory EMF = Persistence.createEntityManagerFactory("Persistence_PU");
+	public static EntityManagerFactory EMF;
+	
+	
+	public DisqueraDAOImpl() {
+		EMF = Persistence.createEntityManagerFactory("Persistence_PU");
+	}
 
 	@Override
 	public void guardar(Disquera disquera) {

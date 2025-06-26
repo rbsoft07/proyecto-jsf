@@ -12,7 +12,6 @@ import javax.persistence.Table;
  * @author RBSOFT Clase que representa a un empleado
  */
 
-@Entity
 @Table(name = "empleado")
 public class Empleado implements Serializable {
 

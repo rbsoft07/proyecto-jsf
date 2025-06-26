@@ -29,7 +29,7 @@ class DisqueraDAOImplTest {
 	void testGuardar() {
 		
 		Disquera objDisquera = new Disquera();
-		objDisquera.setDescripcion("MegaForces");
+		objDisquera.setDescripcion("FlowDJ");
 		objDisquera.setFechaCreacion(LocalDateTime.now());
 		objDisquera.setFechaModificaion(LocalDateTime.now());
 		objDisquera.setEstatus(true);
@@ -68,7 +68,7 @@ class DisqueraDAOImplTest {
 		
 		assertTrue(lstDisqueras.size() >0 );
 		lstDisqueras.forEach(disquera -> { 
-			System.out.println("Disquera : " + disquera.getDescripcion());
+			System.out.println("Disquera : " + disquera.getDescripcion() + " --- Id : " + disquera.getIdDisquera() );
 		});
 		
 	}
@@ -78,8 +78,8 @@ class DisqueraDAOImplTest {
 	 */
 	@Test
 	void testConsultarById() {
-		Disquera disquera = this.disqueraDAO.consultarById(4L);
-		System.out.println("Disquera " + disquera.getDescripcion());
+		Disquera disquera = this.disqueraDAO.consultarById(10L);
+		System.out.println("Disquera by ID:  " + disquera.getDescripcion());
 	}
 	
 	@Test
@@ -91,7 +91,7 @@ class DisqueraDAOImplTest {
 		System.out.println("Disquera by Description : "  + disqueraConsultada.getDescripcion() );
 	}
 
-	
+	@Test
 	void testConsultaByDescriptionNative() {
 		Disquera disqueraConsultada = this.disqueraDAO.consultaByDescriptionNative("Disco1");
 		

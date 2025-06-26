@@ -4,7 +4,7 @@
   <persistence-unit name="Persistence_PU" transaction-type="RESOURCE_LOCAL">
     
 	<!--  Define la clase para Hibernate que implementa JPA -->
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     
     <!--<properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/JPATutorial?zeroDateTimeBehavior=convertToNull&amp;serverTimezone=UTC"/>
@@ -29,8 +29,6 @@
       
 <!--       <property name="javax.persistence.schema-generation.database.action" value="create"/> -->
     </properties>
-    
-    
     
   </persistence-unit>
 </persistence>

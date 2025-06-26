@@ -32,8 +32,8 @@ public class Disquera {
 	@Column(name = "fechaCreacion")
 	private LocalDateTime fechaCreacion;
 	
-	@Column(name = "fechaModificaion")
-	private LocalDateTime fechaModificaion;
+	@Column(name = "fechaModificacion")
+	private LocalDateTime fechaModificacion;
 	
 	@Column(name = "estatus")
 	private boolean estatus;
@@ -79,13 +79,13 @@ public class Disquera {
 	 * @return the fechaModificaion
 	 */
 	public LocalDateTime getFechaModificaion() {
-		return fechaModificaion;
+		return fechaModificacion;
 	}
 	/**
 	 * @param fechaModificaion the fechaModificaion to set
 	 */
-	public void setFechaModificaion(LocalDateTime fechaModificaion) {
-		this.fechaModificaion = fechaModificaion;
+	public void setFechaModificaion(LocalDateTime fechaModificacion) {
+		this.fechaModificacion = fechaModificacion;
 	}
 	/**
 	 * @return the estatus

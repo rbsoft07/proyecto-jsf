@@ -6,15 +6,12 @@ import jakarta.persistence.Persistence;
 
 public class ConexionDataBase {
 	
-	public EntityManagerFactory EMF;
-	
-	
-	public ConexionDataBase() {
-		EMF = Persistence.createEntityManagerFactory("Persistence_PU");
-	}
 
-	
-	public EntityManager getConnetion() {
-		return EMF.createEntityManager();
+	public static EntityManager getEntityManagerCon() {
+		 EntityManagerFactory factory = Persistence.createEntityManagerFactory("Persistence_PU");
+		
+		 EntityManager manager = factory.createEntityManager();
+		 return manager;
 	}
+	
 }

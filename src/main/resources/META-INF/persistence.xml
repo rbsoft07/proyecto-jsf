@@ -16,6 +16,8 @@
     
     <!--  Define la clase para Hibernate que implementa JPA -->
      <class>com.rbsoft.projectjsf.entity.Disquera</class>
+     <class>com.rbsoft.projectjsf.entity.Genero</class>
+     <class>com.rbsoft.projectjsf.entity.SubGenero</class>
     
     
      <properties>

@@ -32,24 +32,62 @@ public class SubGeneroDAOImpl extends ConexionDataBase implements SubGeneroDAO {
 	
 	@Override
 	public void guardar(SubGenero subGenero) {
-		// TODO Auto-generated method stub
+
+		try {
+			et.begin();
+			entityManager.persist(subGenero);
+			et.commit();
+		} catch (Exception e) {
+			if (et != null) {
+				et.rollback();
+			}
+			e.printStackTrace();
+		}finally {
+			entityManager.close();
+		}
 
 	}
 
 	@Override
 	public void actulizar(SubGenero subGenero) {
-		// TODO Auto-generated method stub
+		try {
+			et.begin();
+			entityManager.merge(subGenero);
+			et.commit();
+		} catch (Exception e) {
+			if (et != null) {
+				et.rollback();
+			}
+			e.printStackTrace();
+		}finally {
+			entityManager.close();
+		}
 
 	}
 
 	@Override
 	public void eliminar(Long idSubGenero) {
-		// TODO Auto-generated method stub
+		
+		SubGenero objSubGenero = entityManager.find(SubGenero.class, idSubGenero);
+		try {
+			et.begin();
+			entityManager.remove(objSubGenero);
+			et.commit();
+		} catch (Exception e) {
+			if (et != null) {
+				et.rollback();
+			}
+			e.printStackTrace();
+		}finally {
+			entityManager.close();
+		}
+
 
 	}
 
 	@Override
 	public List<SubGenero> lstConlustas() {
+		@SuppressWarnings("unchecked")
 		TypedQuery<SubGenero> query = (TypedQuery<SubGenero>) entityManager.createQuery("FROM SubGenero ORDER BY descripcion");
 		return query.getResultList();
 	}

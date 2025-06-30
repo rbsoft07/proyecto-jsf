@@ -5,12 +5,14 @@ package com.rbsoft.projectjsf.dao.impl.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
 import com.rbsoft.projectjsf.dao.SubGeneroDAO;
 import com.rbsoft.projectjsf.dao.impl.SubGeneroDAOImpl;
+import com.rbsoft.projectjsf.entity.Genero;
 import com.rbsoft.projectjsf.entity.SubGenero;
 
 /**
@@ -26,7 +28,7 @@ class SubGeneroDAOImplTest {
 	 */
 	@Test
 	void testSubGeneroDAOImpl() {
-		fail("Not yet implemented");
+
 	}
 
 	/**
@@ -34,7 +36,19 @@ class SubGeneroDAOImplTest {
 	 */
 	@Test
 	void testGuardar() {
-		fail("Not yet implemented");
+		SubGenero subGenero = new SubGenero();
+		subGenero.setDescripcion("Dancehall");
+		subGenero.setFechaCreacion(LocalDateTime.now());
+		subGenero.setEstatus(true);
+		
+		Genero genero = new Genero();
+		genero.setDescripcion("Reggea");
+		genero.setFechaCreacion(LocalDateTime.now());
+		genero.setEstatus(true);
+		
+		subGenero.setGenero(genero);
+		
+		this.objSubGeneroDAO.guardar(subGenero);
 	}
 
 	/**
@@ -42,7 +56,12 @@ class SubGeneroDAOImplTest {
 	 */
 	@Test
 	void testActulizar() {
-		fail("Not yet implemented");
+		SubGenero subGeneroConsultado = this.objSubGeneroDAO.consultarById(5L);
+		subGeneroConsultado.setDescripcion("Rocksteady");
+		subGeneroConsultado.getGenero().setDescripcion("ReggeaMusic");
+		
+		this.objSubGeneroDAO.actulizar(subGeneroConsultado);
+		
 	}
 
 	/**
@@ -50,7 +69,7 @@ class SubGeneroDAOImplTest {
 	 */
 	@Test
 	void testEliminar() {
-		fail("Not yet implemented");
+		this.objSubGeneroDAO.eliminar(4L);
 	}
 
 	/**
@@ -62,7 +81,10 @@ class SubGeneroDAOImplTest {
 		
 		assertTrue(lstSubGeneros.size() > 0 );
 		
-		lstSubGeneros.forEach(sub -> { System.out.println("Id SubGenero: " +  sub.getIdSubGenero()  +"SubGenero: " + sub.getDescripcion());
+		lstSubGeneros.forEach(sub -> { 
+			System.out.println("Id SubGenero: " +  sub.getIdSubGenero()  
+			+" SubGenero: " + sub.getDescripcion() 
+			+ "  Genero: " + sub.getGenero().getDescripcion());
 			
 		});
 	}

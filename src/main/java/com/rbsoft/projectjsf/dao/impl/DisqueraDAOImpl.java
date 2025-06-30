@@ -102,7 +102,6 @@ public class DisqueraDAOImpl extends ConexionDataBase implements DisqueraDAO {
 		} finally {
 			entityManager.close();
 		}
-
 	}
 
 	@Override

@@ -17,5 +17,5 @@ public class ConexionDataBase {
         return emf.createEntityManager();
     }
 
-	
+    
 }

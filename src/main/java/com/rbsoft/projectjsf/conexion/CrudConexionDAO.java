@@ -8,13 +8,13 @@ import java.util.List;
 /**
  * 
  */
-public interface CrudConexionDAO <T>{
+public interface CrudConexionDAO<T>{
 	
-	void guardar(T t);
-	void actualizar(T t);
-	void eliminar (Long id);
-	T obtenerPorId(Long id);
-	List<T> ltsObtenerTodos();
+	void persistir(T t);
+	void merge(T t);
+	void remove (Long id);
+	T getById(Long id);
+	List<T> getAll();
 	
 	
 }
